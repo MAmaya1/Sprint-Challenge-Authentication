@@ -9,6 +9,11 @@ const StyledHeader = styled.header`
     background: #A4BCC4;
     padding: 15px 0;
 
+    .home {
+        text-align: left;
+        margin: 0 515px 0 0;
+    }
+
     a {
         margin-left: 15px;
         text-decoration: none;
@@ -38,7 +43,8 @@ const Header = props => {
     return (
         <StyledHeader>
             <Nav>
-                <NavLink exact to="/login">Log In</NavLink>
+                <NavLink exact to="/" className="home">Home</NavLink>
+                <NavLink to="/login">Log In</NavLink>
                 <NavLink to="/register">Sign Up</NavLink>
             </Nav>
         </StyledHeader>
