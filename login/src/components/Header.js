@@ -6,10 +6,8 @@ import styled from 'styled-components';
 // Styled Components
 
 const StyledHeader = styled.header`
-    display: flex;
-    justify-content: flex-end;
-    background: #A4bCC4;
-    padding: 15px 10px;
+    background: #A4BCC4;
+    padding: 15px 0;
 
     a {
         margin-left: 15px;
@@ -26,7 +24,12 @@ const StyledHeader = styled.header`
     .active {
         color: white;
     }
+`
 
+const Nav = styled.nav`
+    max-width: 700px;
+    margin: auto;
+    text-align: right;
 `
 
 // Header Component
@@ -34,8 +37,10 @@ const StyledHeader = styled.header`
 const Header = props => {
     return (
         <StyledHeader>
-            <NavLink exact to="/login">Log In</NavLink>
-            <NavLink to="/register">Sign Up</NavLink>
+            <Nav>
+                <NavLink exact to="/login">Log In</NavLink>
+                <NavLink to="/register">Sign Up</NavLink>
+            </Nav>
         </StyledHeader>
     )
 }
