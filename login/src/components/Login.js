@@ -21,7 +21,7 @@ class Login extends React.Component {
   login = event => {
     event.preventDefault();
     axios
-      .post('http://localhost:3300/api/login', this.state)
+      .post('http://localhost:3300/api/login', this.state.credentials)
       .then(res => {
         localStorage.setItem('token', res.data.token);
         this.props.history.push('/jokes');
@@ -36,7 +36,6 @@ class Login extends React.Component {
       <>
         <h2>Login</h2>
         <form onSubmit={this.login}>
-          <div>
             <label htmlFor="username" />
             <input
               id="username"
@@ -46,8 +45,6 @@ class Login extends React.Component {
               placeholder="username"
               onChange={this.handleChange}
             />
-          </div>
-          <div>
             <label htmlFor="password" />
             <input
               id="password"
@@ -57,10 +54,7 @@ class Login extends React.Component {
               placeholder="password"
               onChange={this.handleChange}
             />
-          </div>
-          <div>
             <button type="submit">Login</button>
-          </div>
         </form>
       </>
     );

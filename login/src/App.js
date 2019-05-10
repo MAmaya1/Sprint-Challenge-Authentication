@@ -1,17 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 
 import Header from './components/Header';
 import Login from './components/Login';
+import Jokes from './components/Jokes';
 
 function App() {
   return (
-    <Router>
+    <div>
       <Header/>
-      <Route to="/login" component={Login}/>
+      <Route path="/login" component={Login}/>
       {/* <Route to="/register" component={Register}/> */}
-    </Router>
+      <Route path="/jokes" component={Jokes}/>
+    </div>
   );
 }
 
-export default App;
+export default withRouter(App);

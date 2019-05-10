@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Header = props => {
     return (
         <header>
-            <NavLink to="/login">Log In</NavLink>
+            <NavLink exact to="/login">Log In</NavLink>
             <NavLink to="/register">Sign Up</NavLink>
         </header>
     )
